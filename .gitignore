@@ -1,0 +1,6 @@
+__pycache__/
+.coverage
+.hypothesis
+.mutmut-cache
+.pytest_cache
+.vscode
