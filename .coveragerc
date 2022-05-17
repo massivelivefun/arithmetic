@@ -1,0 +1,5 @@
+[run]
+include =
+    src/arithmetic/*
+omit =
+    src/arithmetic/__init__.py
