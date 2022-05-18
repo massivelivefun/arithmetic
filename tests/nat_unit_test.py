@@ -99,5 +99,5 @@ class NatUnitTest(unittest.TestCase):
         self.assertTrue(zero.less_than(three))
         self.assertLess(two, three)
         self.assertTrue(two.less_than(three))
-        self.assertLess(one, zero)
-        self.assertTrue(one.less_than(zero))
+        self.assertFalse(one < zero)
+        self.assertFalse(one.less_than(zero))
