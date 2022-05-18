@@ -17,6 +17,12 @@ class NatUnitTest(unittest.TestCase):
     def test_to_representation_one(self):
         self.assertEqual(repr(Succ(Zero())), 'S(0)')
 
+    def test_to_string_two(self):
+        self.assertEqual(str(Succ(Succ(Zero()))), 'S(S(0))')
+
+    def test_to_representation_two(self):
+        self.assertEqual(repr(Succ(Succ(Zero()))), 'S(S(0))')
+
     def test_equals_same(self):
         two1 = Succ(Succ(Zero()))
         two2 = Succ(Succ(Zero()))
@@ -84,11 +90,14 @@ class NatUnitTest(unittest.TestCase):
         # self.assertEqual(six, three * two)
         self.assertEqual(six, three.multiply(two))
 
-    # def test_less_than(self):
-    #     zero = Zero()
-    #     two = Succ(Succ(zero))
-    #     three = Succ(two)
-    #     self.assertLess(zero, three)
-    #     self.assertTrue(zero.less_than(three))
-    #     self.assertLess(two, three)
-    #     self.assertTrue(two.less_than(three))
+    def test_less_than(self):
+        zero = Zero()
+        one = Succ(zero)
+        two = Succ(Succ(zero))
+        three = Succ(two)
+        self.assertLess(zero, three)
+        self.assertTrue(zero.less_than(three))
+        self.assertLess(two, three)
+        self.assertTrue(two.less_than(three))
+        self.assertLess(one, zero)
+        self.assertTrue(one.less_than(zero))
