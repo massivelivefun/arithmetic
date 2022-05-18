@@ -4,6 +4,7 @@ __pycache__/
 .mutmut-cache
 .pytest_cache
 .vscode
+.venv/
 
 .DS_Store
 desktop.ini
