@@ -1,5 +1,6 @@
 from .nat import Nat
 
+
 class Succ(Nat):
     def __init__(self: 'Succ', around: Nat) -> 'Succ':
         self.around: Nat = around
@@ -113,13 +114,13 @@ class Succ(Nat):
     def less_than(self, other: Nat) -> bool:
         cur: Nat = self
         while not cur.is_zero() and not other.is_zero():
-            cur: Succ = cur.around
-            other: Succ = other.around
-        return cur.is_zero() and not other.is_zero()
+            cur = cur.around
+            other = other.around
+        return cur.is_zero() and not other.is_zero()  # pragma: no mutate
 
     def __lt__(self, other: Nat) -> bool:
         cur: Nat = self
         while not cur.is_zero() and not other.is_zero():
-            cur: Succ = cur.around
-            other: Succ = other.around
-        return cur.is_zero() and not other.is_zero()
+            cur = cur.around
+            other = other.around
+        return cur.is_zero() and not other.is_zero()  # pragma: no mutate
