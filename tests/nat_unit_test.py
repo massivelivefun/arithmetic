@@ -4,6 +4,7 @@ from src.arithmetic.nat import Nat
 from src.arithmetic.succ import Succ
 from src.arithmetic.zero import Zero
 
+
 class NatUnitTest(unittest.TestCase):
     def test_to_string_zero(self):
         self.assertEqual(str(Zero()), '0')
@@ -99,5 +100,15 @@ class NatUnitTest(unittest.TestCase):
         self.assertTrue(zero.less_than(three))
         self.assertLess(two, three)
         self.assertTrue(two.less_than(three))
+        self.assertLess(one, three)
+        self.assertTrue(one.less_than(three))
         self.assertFalse(one < zero)
         self.assertFalse(one.less_than(zero))
+
+        self.assertFalse(two < zero)
+        self.assertFalse(two.less_than(zero))
+
+        self.assertFalse(zero < zero)
+        self.assertFalse(zero.less_than(zero))
+
+        self.assertFalse(two < two)
